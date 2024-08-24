@@ -133,4 +133,7 @@ public class Utils {
         System.out.println("Медианная цена: " + medianPrice);
         System.out.println("Разница: " + (averagePrice - medianPrice));
     }
+    public List<Integer> getPrices(List<Ticket> tickets) {
+        return tickets.stream().map(Ticket::getPrice).sorted().collect(Collectors.toList());
+    }
 }

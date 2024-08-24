@@ -25,8 +25,8 @@ public class TicketAnalyzer {
 
             utils.printMinFlightTimeByCarrier(minFlightTimeByCarrier);
             // Получаем список цен на билеты и сортируем его
-            List<Integer> prices = filteredTickets.stream().map(Ticket::getPrice).sorted().collect(Collectors.toList());
-
+            List<Integer> prices = utils.getPrices(filteredTickets);
+            // Печатем среднюю и медианную цену
              utils.printAverageAndMedian(utils,prices);
         } else {
             System.err.println("Файл не найден: " + filePath);
