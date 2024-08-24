@@ -1,14 +1,8 @@
 package org.example.ticketstest;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.DeserializationFeature;
-
 import java.io.File;
-import java.io.IOException;
-import java.nio.file.Path;
 import java.util.*;
 import java.util.stream.Collectors;
-import java.util.stream.IntStream;
 
 public class TicketAnalyzer {
     public static void main(String[] args) {
