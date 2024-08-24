@@ -14,13 +14,13 @@ public class TicketAnalyzer {
         if (file.exists()) {
             // Создаем ObjectMapper для чтения JSON
             TicketWrapper wrapper = utils.readFile(file);
-
             // Получение списка билетов
             List<Ticket> tickets = wrapper.getTickets();
+            // Фильтруем билеты по направлениям "Владивосток" -> "Тель-Авив"
             List<Ticket> filteredTickets = utils.filterTicketsAndPrint(tickets);
             // Минимальное время полета для каждого перевозчика
             Map<String, Long> minFlightTimeByCarrier = utils.getMinFlightTimeByCarrier(filteredTickets);
-
+            // Вывод минимального времени полета для каждого перевозчика
             utils.printMinFlightTimeByCarrier(minFlightTimeByCarrier);
             // Получаем список цен на билеты и сортируем его
             List<Integer> prices = utils.getPrices(filteredTickets);
