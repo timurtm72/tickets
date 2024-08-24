@@ -20,8 +20,7 @@ public class TicketAnalyzer {
             List<Ticket> tickets = wrapper.getTickets();
             List<Ticket> filteredTickets = utils.filterTicketsAndPrint(tickets);
             // Минимальное время полета для каждого перевозчика
-            Map<String, Long> minFlightTimeByCarrier = new HashMap<>();
-            minFlightTimeByCarrier = utils.getMinFlightTimeByCarrier(filteredTickets);
+            Map<String, Long> minFlightTimeByCarrier = utils.getMinFlightTimeByCarrier(filteredTickets);
 
             utils.printMinFlightTimeByCarrier(minFlightTimeByCarrier);
             // Получаем список цен на билеты и сортируем его
