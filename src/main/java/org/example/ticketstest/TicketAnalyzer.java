@@ -2,13 +2,12 @@ package org.example.ticketstest;
 
 import java.io.File;
 import java.util.*;
-import java.util.stream.Collectors;
 
 public class TicketAnalyzer {
     public static void main(String[] args) {
         // Путь к файлу
         Utils utils = new Utils();
-        String filePath = utils.readFilePath("tickets.json",utils);
+        String filePath = utils.readFilePath("tickets.json");
         File file = new File(filePath);
 
         // Проверка на существование файла
@@ -26,7 +25,7 @@ public class TicketAnalyzer {
             // Получаем список цен на билеты и сортируем его
             List<Integer> prices = utils.getPrices(filteredTickets);
             // Печатем среднюю и медианную цену
-             utils.printAverageAndMedian(utils,prices);
+             utils.printAverageAndMedian(prices);
         } else {
             System.err.println("Файл не найден: " + filePath);
         }

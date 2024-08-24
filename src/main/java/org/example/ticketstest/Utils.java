@@ -69,8 +69,8 @@ public class Utils {
         }
     }
 
-    public String readFilePath(String fileName, Utils utils) {
-        Path filePath = utils.getResourceFolderPath("tickets.json");
+    public String readFilePath(String fileName) {
+        Path filePath = this.getResourceFolderPath("tickets.json");
         System.out.println(filePath);
         File file = new File(filePath.toString());
         return filePath.toString();
@@ -122,10 +122,10 @@ public class Utils {
         });
     }
 
-    public void printAverageAndMedian(Utils utils,List<Integer> prices){
-        double averagePrice = utils.getAveragePrice(prices);
+    public void printAverageAndMedian(List<Integer> prices){
+        double averagePrice = this.getAveragePrice(prices);
         // Рассчитываем медианную цену
-        double medianPrice = utils.getMedianPrice(prices);
+        double medianPrice = this.getMedianPrice(prices);
 
         // Вывод разницы между средней и медианной ценой
         System.out.println("\nРазница между средней ценой и медианной ценой для полетов между Владивостоком и Тель-Авивом:");
